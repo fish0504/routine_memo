@@ -8,7 +8,7 @@
         <h1 class='done-result'>{{$article->count}}</h1>
         <h2 class='done-days'>日</h2>
         </div>
-
+        <h1>in {{$article->revial_count}} th season</h1>
         <p class="move">
         <a href={{ route('article.list') }} class='btn btn-outline-primary'>一覧に戻る</a>
         <a href={{ route('article.edit', ["id" =>  $article->id]) }} class='btn btn-outline-primary'>編集</a>

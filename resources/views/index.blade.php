@@ -12,6 +12,7 @@
             </a>
             </td>
             <td>{{$article->count}}</td>
+            <td>{{$article->revial_count}} th</td>
             <td>{{$article->user_name}}</td>
         </tr>
     @endforeach

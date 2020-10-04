@@ -45,6 +45,7 @@ class ArticleController extends Controller
     {
         $article=Article::find($id);
         $article->count=0;
+        $article->revial_count=$article->revial_count+1;
         $article->save();
         return view('done',['article'=>$article]);
     }
