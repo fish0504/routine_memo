@@ -36,7 +36,19 @@ body {padding-top: 80px;}
 .move{
     margin-left:auto;
 }
+.row.content {height: 1500px}
 
+@media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;} 
+    }
+
+.other_comments{
+    margin-top:200px;
+}
 
 
 </style>

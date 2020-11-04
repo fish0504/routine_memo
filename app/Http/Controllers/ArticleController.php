@@ -117,7 +117,6 @@ class ArticleController extends Controller
     {
         $article = Article::find($id);
         $article->content = $request->content;
-        $article->user_name = $request->user_name;
         $article->save();
         return redirect()->route('article.show', ['id' => $article->id]);
     }
@@ -133,5 +132,6 @@ class ArticleController extends Controller
         $article=Article::find($id);
         $article->delete();
         return redirect('/articles');
+        //return redirect()->route('article.show',['id'=>$article->id]);
     }
 }

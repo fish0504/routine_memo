@@ -20,4 +20,18 @@
     <div>
         <a href={{ route('article.new') }} class='btn btn-outline-primary'>新規投稿</a>
     </div>
+    <div class="other_comments">
+    <div class="row">
+        <div class="col-sm-2 text-center">
+        
+        <img src="{{asset('/storage/asian.gif')}}" class="img-circle" height="95" width="65" alt="Avatar">
+        </div>
+        
+        <div class="col-sm-10">
+        <h4>作成者<small>Sep 29, 2015, 9:12 PM</small></h4>
+        <p>ここにコメントを入力
+        Keep up the GREAT work! I am cheering for you!! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <br>
+        </div>
+    </div>
 @endsection
