@@ -28,9 +28,8 @@
         </div>
         
         <div class="col-sm-10">
-        <h4>作成者<small>Sep 29, 2015, 9:12 PM</small></h4>
-        <p>ここにコメントを入力
-        Keep up the GREAT work! I am cheering for you!! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <h4>作成者<small>2020 12 </small></h4>
+        <p>個人用の習慣記録アプリです</p>
         <br>
         </div>
     </div>

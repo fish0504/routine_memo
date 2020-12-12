@@ -38,7 +38,7 @@ class ArticleController extends Controller
         $article=Article::find($id);
         $article->count=$article->count-1;
         $article->save();
-        return view('done',['article'=>$article]);
+        return view('show',['article'=>$article]);
     }
 
     public function reset(Request $request,$id ,Article $article)
