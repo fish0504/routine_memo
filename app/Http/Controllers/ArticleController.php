@@ -134,4 +134,10 @@ class ArticleController extends Controller
         return redirect('/articles');
         //return redirect()->route('article.show',['id'=>$article->id]);
     }
+    public function calender()//Request $request,$id,Article $article)
+    {
+        //$article=Article::find($id);
+        return view('calender');
+        //return redirect()->route('article.show',['id'=>$article->id]);
+    }
 }

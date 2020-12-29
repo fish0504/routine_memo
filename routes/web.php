@@ -31,6 +31,7 @@ Route::get('/article/cancel/{id}', 'ArticleController@cancel')->name('article.ca
 // 追加　習慣の継続日数をリセットするresetメソッド
 Route::get('/article/reset/{id}', 'ArticleController@reset')->name('article.reset');
 
+Route::get('/article/calender', 'ArticleController@calender')->name('article.calender');
 Route::get('/article/edit/{id}', 'ArticleController@edit')->name('article.edit');
 Route::post('/article/update/{id}', 'ArticleController@update')->name('article.update');
 
