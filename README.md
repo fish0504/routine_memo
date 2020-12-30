@@ -76,5 +76,10 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 ## License
 
+
+## このアプリについて
+このアプリは個人開発で作成している習慣記録アプリです。
+自分が続けたい習慣を記録して、継続を可視化することが目的です。
+
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
 # routine_memo
