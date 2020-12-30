@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Article;
 use DateTime;
+use Facade\FlareClient\Http\Response;
 use Illuminate\Http\Request;
 
 
@@ -29,13 +30,14 @@ class ArticleController extends Controller
             
         return $ym;
     }
-    public function index()
+    public function index(Request $request)
     {
         //indexという名前のviewを呼び出す
         $message='keep doing';
         //モデルでデータベースのデータをまとめて取り出す
         $articles=Article::all();
-        return view('index',['message'=>$message,'articles'=>$articles]);
+        $url=$request->url();
+        return view('index',['url'=>$url,'message'=>$message,'articles'=>$articles]);
     }
 
     public function take_rest()
@@ -175,10 +177,11 @@ class ArticleController extends Controller
      * @param  \App\Article  $article
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Request $request,$id,Article $article)
+    public function delete(Request $request,$id,Article $article)
     {
         $article=Article::find($id);
         $article->delete();
+        $article->save();
         return redirect('/articles');
         //return redirect()->route('article.show',['id'=>$article->id]);
     }

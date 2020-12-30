@@ -9,7 +9,8 @@
         @include('nav')
         <div class='container'>
         @yield('content')
-        </div>
         
+        </div>
+        <p>@extends('bottom')</p>
     </body>
 </html>

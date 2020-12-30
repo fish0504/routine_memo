@@ -30,6 +30,7 @@
         <div class="col-sm-10">
         <h4>作成者<small>fish0504 2020 12 </small></h4>
         <p>個人用の習慣記録アプリです</p>
+        
         <br>
         </div>
     </div>

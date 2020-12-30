@@ -34,7 +34,12 @@ body {padding-top: 80px;}
     font-size : 100px;
 }
 .move{
-    margin-left:auto;
+    margin-left: 35%;
+    margin-right: 35%;
+}
+.season{
+    margin-left: 35%;
+    margin-right: 35%;
 }
 .row.content {height: 1500px}
 
