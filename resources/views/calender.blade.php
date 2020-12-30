@@ -126,6 +126,10 @@ for ( $day = 1; $day <= $day_count; $day++, $youbi++) {
         th:nth-of-type(7), td:nth-of-type(7) {
             color: blue;
         }
+        .pop{
+        margin-left:47%;
+        
+        }
     </style>
 </head>
 <body>
@@ -149,5 +153,6 @@ for ( $day = 1; $day <= $day_count; $day++, $youbi++) {
             ?>
         </table>
     </div>
+    <a href={{ route('article.list') }} class='btn pop btn-outline-primary'>一覧に戻る</a><a href={{ route('article.list') }} class='btn btn-outline-primary'>ヒートマップ</a>
 </body>
 </html>

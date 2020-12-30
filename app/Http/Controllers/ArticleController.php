@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+use DateTime;
 use Illuminate\Http\Request;
+
 
 class ArticleController extends Controller
 {
@@ -12,6 +14,21 @@ class ArticleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function getD(){
+        if (isset($_GET['ym'])) {
+            $ym = $_GET['ym'];
+            } else {
+            // 今月の年月を表示
+            $ym = date('Y-m');
+            }
+            $timestamp = strtotime($ym . '-01');
+            if ($timestamp === false) {
+                $ym = date('Y-m');
+                $timestamp = strtotime($ym . '-01');
+            }
+            
+        return $ym;
+    }
     public function index()
     {
         //indexという名前のviewを呼び出す
@@ -28,10 +45,41 @@ class ArticleController extends Controller
 
     public function done(Request $request,$id ,Article $article)
     {
+        date_default_timezone_set('Asia/Tokyo');
+        if (isset($_GET['ymd'])) {
+        $ym = $_GET['ymd'];
+        } else {
+        // 今月の年月を表示
+        $ym = date('Y-m-d');
+        }
+        $timestamp = strtotime($ym . '-01');
+        if ($timestamp === false) {
+            $ym = date('Y-m');
+            $timestamp = strtotime($ym . '-01');
+        }
+        
         $article=Article::find($id);
-        $article->count=$article->count+1;
+        
+        
+        //前回に記録した時との日数の差を求める
+        $dateDifference = abs($timestamp- strtotime($article->updated_at));
+
+        $years  = floor($dateDifference / (365 * 60 * 60 * 24));
+        $months = floor(($dateDifference - $years * 365 * 60 * 60 * 24) / (30 * 60 * 60 * 24));
+        $days   = floor(($dateDifference - $years * 365 * 60 * 60 * 24 - $months * 30 * 60 * 60 *24) / (60 * 60 * 24));
+        
+        $increased=true;
+        //1日に一度だけ記録できるようにする
+        if($years==0 && $months==0 && $days==0){
+            $increased=false;
+        }
+        else{
+            $article->count=$article->count+1;
+        }
+        //echo $dateDifference;
         $article->save();
-        return view('done',['article'=>$article]);
+    
+        return view('done',['article'=>$article,'increased'=>$increased]);
     }
     public function cancel(Request $request,$id ,Article $article)
     {
